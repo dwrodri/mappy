@@ -33,3 +33,5 @@
 *.out
 *.app
 
+#JetBrains bullshit
+.idea/*
