@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.8)
+
 project(mappy)
-
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "/home/dwrodri/CLionProjects/mappy/cmake_modules/")
 set(CMAKE_CXX_STANDARD 11)
-
-set(SOURCE_FILES main.cpp)
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIR})
+set(SOURCE_FILES src/main.cpp)
 add_executable(mappy ${SOURCE_FILES})
+target_link_libraries(mappy ${SDL2_LIBRARY})
